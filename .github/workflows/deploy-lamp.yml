@@ -1,4 +1,4 @@
-name: lamp-test-from-github-repo Deployment
+name: Lamp Application Deployment
 
 on:
   push:
@@ -35,9 +35,9 @@ permissions:
 
 jobs:
   deploy:
-    name: Deploy lamp-test-from-github-repo
+    name: Deploy Lamp Application
     # Use reusable workflow from source repo - always gets latest fixes
-    uses: AWS-yuanzhe/lightsail-deploy/.github/workflows/deploy-generic-reusable.yml@main
+    uses: naveenraj44125-creator/lamp-stack-lightsail/.github/workflows/deploy-generic-reusable.yml@main
     with:
       config_file: 'deployment-lamp.config.yml'
       aws_region: 'us-east-1'
@@ -51,7 +51,7 @@ jobs:
     steps:
       - name: Show Deployment Results
         run: |
-          echo "## 🚀 lamp-test-from-github-repo Deployment" >> $GITHUB_STEP_SUMMARY
+          echo "## 🚀 Lamp Application Deployment" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "- **URL**: ${{ needs.deploy.outputs.deployment_url }}" >> $GITHUB_STEP_SUMMARY
           echo "- **Status**: ${{ needs.deploy.outputs.deployment_status }}" >> $GITHUB_STEP_SUMMARY

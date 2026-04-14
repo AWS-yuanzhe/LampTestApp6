@@ -1,10 +1,10 @@
-# lamp-test-from-github-repo Deployment Configuration
+# Lamp Application Deployment Configuration
 
 aws:
   region: us-east-1
 
 lightsail:
-  instance_name: lamp-test-from-github-repo
+  instance_name: lamp-app-1776203830
   static_ip: ""
   
   # Instance size configuration (optional)
@@ -13,10 +13,10 @@ lightsail:
   
   # Operating system blueprint configuration (optional)
   # If not specified, defaults to ubuntu_22_04
-  blueprint_id: "lamp_ls_1_0"
+  blueprint_id: "ubuntu_24_04"
 
 application:
-  name: lamp-test-from-github-repo
+  name: lamp application
   version: "1.0.0"
   type: lamp
   
@@ -181,4 +181,4 @@ security:
 backup:
   enabled: true
   retention_days: 7
-  backup_location: "/var/backups/lamp-test-from-github-repo-deployments"
+  backup_location: "/var/backups/lamp application-deployments"
